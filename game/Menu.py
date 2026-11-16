@@ -16,7 +16,7 @@ class Menu:
         self.clock = pygame.time.Clock()
         
         image_path = BASE_DIR / "assets" / "BGMenu.png"
-        self.surf = pygame.image.load(str(image_path))
+        self.surf = pygame.image.load(str(image_path)).convert_alpha()
         self.surf = pygame.transform.smoothscale(self.surf, (WIN_WIDTH, WIN_HEIGHT))
         self.rect = self.surf.get_rect(topleft=(0, 0))
 
