@@ -3,7 +3,7 @@ import pygame
 import sys
 
 from pygame import Font, Rect, Surface
-from game.Const import COLOR_WHITE, EVENT_ENEMY, MENU_OPTION, SPAWN_TIME
+from game.Const import COLOR_GREEN, COLOR_GREY, COLOR_WHITE, EVENT_ENEMY, MENU_OPTION, SPAWN_TIME
 from game.Enemy import Enemy
 from game.Entity import Entity
 from game.EntityFactory import EntityFactory
@@ -23,7 +23,7 @@ class Level:
         self.timeout = 20000  # Timeout in milliseconds , 1000 = 1 second
         if game_mode in [MENU_OPTION[1], MENU_OPTION[2]]:
             self.entity_list.extend(EntityFactory.get_entity('Player2'))
-        pygame.time.set_timer(EVENT_ENEMY, SPAWN_TIME)  # 2second
+        pygame.time.set_timer(EVENT_ENEMY, SPAWN_TIME)  
 
     def run(self, ):
         pygame.mixer.music.load('./assets/Level1.mp3')
@@ -39,6 +39,10 @@ class Level:
                     shoot = ent.shoot()
                     if shoot is not None:
                         self.entity_list.append(shoot)
+                if ent.name == 'Player1':
+                    self.level_text(14, f'Player1 - Health: {ent.health} | Score: {ent.score}', COLOR_GREEN, (10, 25))
+                if ent.name == 'Player2':
+                    self.level_text(14, f'Player2 - Health: {ent.health} | Score: {ent.score}', COLOR_GREY, (10, 45))
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -47,6 +51,10 @@ class Level:
                     choice = random.choice(('Enemy1', 'Enemy2'))
                     self.entity_list.append(EntityFactory.get_entity(choice))
 
+
+            
+
+            # printed text
             self.level_text(14, f'Level: {self.name} - Timeout: {self.timeout / 1000:.1f}s', COLOR_WHITE, (10, 5))
             height = self.window.get_height()
             self.level_text(14, f'FPS: {clock.get_fps():.0f}', COLOR_WHITE, (10, height - 35))
