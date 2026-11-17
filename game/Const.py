@@ -1,15 +1,14 @@
 import pygame
 
-
-
-
 # C
 COLOR_ORANGE =(255, 128, 0)
 COLOR_WHITE = (255, 255, 255)
 COLOR_YELLOW = (255, 255, 0)
 COLOR_GREY = (128, 128, 128)
 COLOR_CYAN = (0, 255, 255)
+COLOR_GREEN = (0, 128, 0)
 COLOR_BLACK = (0, 0, 0)
+COLOR_RED = (237, 28, 36)
 
 # E
 EVENT_ENEMY= pygame.USEREVENT + 1
@@ -39,18 +38,18 @@ ENTITY_HEALTH = {'LvL1BG0': 999,
                  'LvL1BG4': 999,
                  'LvL1BG5': 999,
                  'LvL1BG6': 999,
-                 # 'LvL2BG0': 999,
-                 # 'LvL2BG1': 999,
-                 # 'LvL2BG2': 999,
-                 # 'LvL2BG3': 999,
-                 # 'LvL2BG4': 999,
+                 'LvL2BG0': 999,
+                 'LvL2BG1': 999,
+                 'LvL2BG2': 999,
+                 'LvL2BG3': 999,
+                 'LvL2BG4': 999,
                  'Player1': 300,
                  'Player1Shot': 1,
                  'Player2': 300,
                  'Player2Shot': 1,
-                 'Enemy1': 50,
+                 'Enemy1': 100,
                  'Enemy1Shot': 1,
-                 'Enemy2': 50,
+                 'Enemy2': 100,
                  'Enemy2Shot': 1,
                  }
 
@@ -61,7 +60,28 @@ ENTITY_SHOT_DELAY = {
                     'Enemy2': 110,
                     }
 
-
+ENTITY_DAMAGE = {
+                 'LvL1BG0': 0,
+                 'LvL1BG1': 0,
+                 'LvL1BG2': 0,
+                 'LvL1BG3': 0,
+                 'LvL1BG4': 0,
+                 'LvL1BG5': 0,
+                 'LvL1BG6': 999,
+                 'LvL2BG0': 999,
+                 'LvL2BG1': 999,
+                 'LvL2BG2': 999,
+                 'LvL2BG3': 999,
+                 'LvL2BG4': 999,
+                 'Player1': 1,
+                 'Player1Shot': 35,
+                 'Player2': 1,
+                 'Player2Shot': 35,
+                 'Enemy1': 1,
+                 'Enemy1Shot': 35,
+                 'Enemy2': 1,
+                 'Enemy2Shot': 35,
+                }
 
 #M
 MENU_OPTION = ('NEW GAME 1P',
@@ -85,6 +105,28 @@ PLAYER_KEY_SHOOT = {'Player1': pygame.K_RCTRL,
 
 # S
 SPAWN_TIME = 4000 #4 SEGUNDOS
+ENTITY_SCORE = {
+                 'LvL1BG0': 0,
+                 'LvL1BG1': 0,
+                 'LvL1BG2': 0,
+                 'LvL1BG3': 0,
+                 'LvL1BG4': 0,
+                 'LvL1BG5': 0,
+                 'LvL1BG6': 0,
+                 'LvL2BG0': 0,
+                 'LvL2BG1': 0,
+                 'LvL2BG2': 0,
+                 'LvL2BG3': 0,
+                 'LvL2BG4': 0,
+                 'Player1': 0,
+                 'Player1Shot': 0,
+                 'Player2': 0,
+                 'Player2Shot': 0,
+                 'Enemy1': 100,
+                 'Enemy1Shot': 0,
+                 'Enemy2': 114,
+                 'Enemy2Shot': 0,
+                }
 
 # W 
 WINDEFAULT_WIDTH = 800 
