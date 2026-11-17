@@ -22,19 +22,54 @@ ENTITY_SPEED = {
     'LvL1BG5': 5,
     'LvL1BG6': 0,
     'Player1': 3,
+    'Player1Shot': 4,
     'Player2': 3,
-    'Enemy1': 2,
-    'Enemy2': 3,
+    'Player2Shot': 4,
+    'Enemy1': 1,
+    'Enemy1Shot': 6,
+    'Enemy2': 1,
+    'Enemy2Shot': 6,
+    
 }
 
+ENTITY_HEALTH = {'LvL1BG0': 999,
+                 'LvL1BG1': 999,
+                 'LvL1BG2': 999,
+                 'LvL1BG3': 999,
+                 'LvL1BG4': 999,
+                 'LvL1BG5': 999,
+                 'LvL1BG6': 999,
+                 # 'LvL2BG0': 999,
+                 # 'LvL2BG1': 999,
+                 # 'LvL2BG2': 999,
+                 # 'LvL2BG3': 999,
+                 # 'LvL2BG4': 999,
+                 'Player1': 300,
+                 'Player1Shot': 1,
+                 'Player2': 300,
+                 'Player2Shot': 1,
+                 'Enemy1': 50,
+                 'Enemy1Shot': 1,
+                 'Enemy2': 50,
+                 'Enemy2Shot': 1,
+                 }
 
-
-
+ENTITY_SHOT_DELAY = {
+                    'Player1': 30,
+                    'Player2': 30,
+                    'Enemy1': 110,
+                    'Enemy2': 110,
+                    }
 
 
 
 #M
-MENU_OPTION = ('NEW GAME 1P', 'NEW GAME 2P - CO-OP', 'NEW GAME 2P - COPETITIVE', 'SCORE', 'SETTINGS','EXIT')
+MENU_OPTION = ('NEW GAME 1P',
+               'NEW GAME 2P - CO-OP',
+                'NEW GAME 2P - COPETITIVE',
+                'SCORE',
+                'SETTINGS',
+                'EXIT')
 
 # P 
 PLAYER_KEY_UP = {'Player1': pygame.K_UP,
@@ -52,8 +87,8 @@ PLAYER_KEY_SHOOT = {'Player1': pygame.K_RCTRL,
 SPAWN_TIME = 4000 #4 SEGUNDOS
 
 # W 
-WIN_WIDTH = 1000
-WIN_HEIGHT = 560
-576
-800
+WINDEFAULT_WIDTH = 800 
+WINDEFAULT_HEIGHT = 600
+WIN_WIDTH = 1000 # escala maior
+WIN_HEIGHT = 600
 

@@ -13,6 +13,7 @@ class Game:
         pygame.mixer.init() # Initialize the mixer module for audio
 
         self.window = pygame.display.set_mode(size=(WIN_WIDTH, WIN_HEIGHT))
+        self.screen_size = (WIN_WIDTH, WIN_HEIGHT)
         pygame.display.set_caption("Game Shooter") # Set the window title
 
         self.menu = Menu(self.window)
@@ -30,8 +31,11 @@ class Game:
                 level = Level(self.window, 'Level 1', menu_return)
                 level_return = level.run()
             elif menu_return == MENU_OPTION[4]:
-                # Handle settings option
-                pass
+                new_size = self.menu.settings(self.screen_size)
+                if new_size != self.screen_size:
+                    self.screen_size = new_size
+                    self.window = pygame.display.set_mode(size=self.screen_size)
+                    self.menu = Menu(self.window)
             elif menu_return == MENU_OPTION[5]:
                 pygame.quit()
                 quit()
