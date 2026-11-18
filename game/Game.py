@@ -28,8 +28,17 @@ class Game:
             menu_return = self.menu.run(self.menu_option)
         #action menu
             if menu_return in [MENU_OPTION[0], MENU_OPTION[1], MENU_OPTION[2]]:
-                level = Level(self.window, 'Level 1', menu_return)
-                level_return = level.run()
+                scores = []
+                level = Level(self.window, 'LvL1', menu_return, scores)
+                level_return, scores = level.run(self.menu)
+                if level_return is None:
+                    continue
+                if level_return:
+                    level = Level(self.window, 'LvL2', menu_return, scores)
+                    level_return, scores = level.run(self.menu)
+                    if level_return is None:
+                        continue
+                self.menu = Menu(self.window)
             elif menu_return == MENU_OPTION[4]:
                 new_size = self.menu.settings(self.screen_size)
                 if new_size != self.screen_size:
