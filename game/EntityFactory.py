@@ -18,6 +18,13 @@ class EntityFactory:
                     list_bg.append(Background(f'LvL1BG{i}', (0, 0)))
                     list_bg.append(Background(f'LvL1BG{i}', (width, 0)))
                 return list_bg
+            case 'LvL2':
+                            list_bg = []
+                            width = pygame.display.get_surface().get_width()
+                            for i in range(5):
+                                list_bg.append(Background(f'LvL2BG{i}', (0, 0)))
+                                list_bg.append(Background(f'LvL2BG{i}', (width, 0)))
+                            return list_bg
             case 'Player1':
                 return [Player('Player1', (10, pygame.display.get_surface().get_height() // 2))]
             case 'Player2':
